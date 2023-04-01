@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>Pol Compass</title>
+		<script>
+			function doIt(){
+				var social = ((document.getElementById("Auth/Lib").value == "Lib")*2-1)*document.getElementById("Social").value;
+				var economic = ((document.getElementById("Left/Right").value == "Right")*2-1)*document.getElementById("Economic").value;
+				document.body.innerHTML = document.getElementById("nextPage").innerHTML;
+				drawIt(social, economic);
+			}
+			function drawIt(social, economic){
+				var canvas = document.getElementsByTagName("CANVAS")[0];
+				var ctx = canvas.getContext("2d");
+				ctx.fillStyle="#ff0000";
+				ctx.fillRect(0,0,500/3,500/3);
+				ctx.fillStyle="#ff00ff";
+				ctx.fillRect(500/3,0,500/3,500/3);
+				ctx.fillStyle="#0000ff";
+				ctx.fillRect(1000/3,0,500/3,500/3);
+				ctx.fillStyle="#ff8000";
+				ctx.fillRect(0,500/3,500/3,500/3);
+				ctx.fillStyle="#808080";
+				ctx.fillRect(500/3,500/3,500/3,500/3);
+				ctx.fillStyle="#8080ff";
+				ctx.fillRect(1000/3,500/3,500/3,500/3);
+				ctx.fillStyle="#00ff00";
+				ctx.fillRect(0,1000/3,500/3,500/3);
+				ctx.fillStyle="#80ff00";
+				ctx.fillRect(500/3,1000/3,500/3,500/3);
+				ctx.fillStyle="#ffff00";
+				ctx.fillRect(1000/3,1000/3,500/3,500/3);
+				ctx.fillStyle="black";
+				ctx.fillRect((economic/100)*245+245,(social/100)*245+245,10,10);
+				document.getElementById("carpet").setAttribute("src",canvas.toDataURL("image/png"));
+				document.getElementById("carpet").setAttribute("style","");
+				canvas.remove();
+			}
+		</script>
+		<style>
+			canvas{
+				border: solid 1px;
+			}
+		</style>
+	</head>
+	<body>
+		<select id="Auth/Lib">
+			<option value="Auth">Auth: </option>
+			<option value="Lib">Lib: </option>
+		</select>
+		<input id="Social" type="number"/>
+		<br>
+		<select id="Left/Right">
+			<option value="Left">Left: </option>
+			<option value="Right">Right: </option>
+		</select>
+		<input id="Economic" type="number"/>
+		<br>
+		<button onclick="doIt();">Let's do it</button>
+		<div style="display:none;" id="nextPage">
+			<canvas width="500" height="500"></canvas>
+			<img id="carpet" style="display:none;" src="Political compass 9 squadrants.jpg"/>
+		</div>
+	</body>
+</html>

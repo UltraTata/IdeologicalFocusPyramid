@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Ideological Pyramid Test</title>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=chrome">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<link href="styles.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="temp q.js"></script>
+		<script src="drawIt.js"></script>
+		<script src="q.js"></script>
+		<script>
+			window.onload = function(){
+				let theForm = document.getElementById("theForm");
+				for(let x = 0;x<q.length;x++){
+					let newQ = "";
+					newQ += `
+						<div class="question">
+							<span>${q[x].question}</span><br>
+							<select id="q${x}" class="form-select">
+					`;
+					for(let y = 0;y<q[x].answers.length;y++){
+						newQ += `<option value="${y}">${q[x].answers[y].answer}</option>`;
+					}
+					newQ += "</select></div>";
+					theForm.innerHTML += newQ;
+				}
+			}
+		</script>
+		<style>
+			canvas{
+				border: solid 1px;
+			}
+		</style>
+	</head>
+	<body class="p-3">
+		<h3>Ideological Pyramid test</h3>
+		<div class="d-none" id="nextPage">
+			<canvas width="500" height="600"></canvas>
+			<canvas width="500" height="500"></canvas>
+			<canvas width="500" height="500"></canvas>
+			<canvas width="650" height="950"></canvas>
+			<canvas width="500" height="500"></canvas>
+			<br>
+			<p id="data"></p>
+			<img class="" id="axes"/>
+			<br>
+			<img class="" id="explained" src="Explained graph.png"/>
+			<br>
+			<img id="without indiv" src="Political compass 9 squadrants.jpg"/>
+			<br>
+			<img id="graph" src="Political compass 9 squadrants.jpg"/>
+			<br>
+			<br>
+			<h4 class="underline">Nolan chart</h4>
+			<img id="nolan"/>
+		</div>
+		<div id="theForm">
+		</div>
+		<button class="btn btn-warning" onclick="result();">Result</button>
+		
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+	</body>
+</html>

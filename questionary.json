@@ -1,0 +1,48 @@
+[
+    {
+        "question":"What's more important for you?",
+        "importance": 50,
+        "answers": [
+            {"answer":"Humanity","glob":50},
+            {"answer":"Country","nat":50},
+            {"answer":"Me"}
+        ]
+    },
+    {
+        "question":"Whould you rather die for you country or for a humanitarian cause?",
+        "importance": 50,
+        "answers": [
+            {"answer":"For the humanitarian cause","glob":50},
+            {"answer":"For my country","nat":50},
+            {"answer":"I would die for both if possible","glob": 25, "nat":25},
+            {"answer":"I would prefer to live"}
+        ]
+    },
+    {
+        "question":"Was the past better than the present?",
+        "importance": 25,
+        "answers": [
+            {"answer":"Yes","trad":25},
+            {"answer":"No","prog":25},
+            {"answer":"I didn't live in the past"},
+            {"answer":"I don't know much about the past", "ignore":"ignore"},
+            {"answer": "We cannot talk about \"the past\" as if it was a single moment, the past was diverse", 
+                "ignore":"ignore"}
+        ]
+    },
+    {
+        "question":"What's your opinion in religions?",
+        "importance": 75,
+        "answers": [
+            {"answer":"Our common father makes all humans brothers","glob":50,"trad":25},
+            {"answer":"Humanity must madure and stop worshiping inexisting entities",
+                "glob":50,"prog":25},
+            {"answer":"I believe in the God/Gods of my parents","trad":75},
+            {"answer":"Some believes and practices are a obstacle for progress. I'm against those.","glob":75},
+            {"answer":"Religion is a very important aspect of our culture. We must preserve it.","nat":50,"trad":25},
+            {"answer":"I try to connect myself with God without external interferince."},
+            {"answer":"I don't belive in any God. But I don't mind if the rest does."},
+            {"answer":"My relationship with religion is complex.","ignore":"ignore"}
+        ]
+    }
+]
